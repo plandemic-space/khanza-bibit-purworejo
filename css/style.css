@@ -186,7 +186,8 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
     letter-spacing:0.03em;
-    padding:9px 16px;
+    padding:13px 16px;
+    min-height:44px;
     border-radius:2px;
     border:1.5px solid var(--ink);
     background:transparent;
@@ -229,6 +230,14 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:9.5px; letter-spacing:0.04em;
     background:var(--paprika); color:#fff;
+    padding:3px 8px; border-radius:2px;
+    text-transform:uppercase;
+  }
+  .ai-badge{
+    position:absolute; bottom:10px; left:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9px; letter-spacing:0.03em;
+    background:rgba(42,36,28,0.82); color:var(--paper);
     padding:3px 8px; border-radius:2px;
     text-transform:uppercase;
   }
@@ -342,6 +351,15 @@
   }
 
   .hide{ display:none !important; }
+
+  /* ---------- Focus visibility (keyboard nav) ---------- */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible{
+    outline:2.5px solid var(--paprika);
+    outline-offset:2px;
+    border-radius:2px;
+  }
 
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }

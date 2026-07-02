@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khanza-bibit.vercel.app/sitemap.xml

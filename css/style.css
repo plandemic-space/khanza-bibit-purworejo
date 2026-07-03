@@ -116,7 +116,7 @@
   .hero-copy{ order:0; }
   @media(min-width:960px){
     .hero{ grid-template-columns: 1fr 0.92fr; }
-    .hero-media{ order:0; }
+    .hero-media{ order:0; height:600px; }
   }
   .hero-copy{
     display:flex; flex-direction:column; justify-content:center;
@@ -131,10 +131,10 @@
 
   .hero-media{
     position:relative;
-    min-height:340px;
+    height:400px;
     overflow:hidden;
   }
-  .hero-media img{ width:100%; height:100%; object-fit:cover; min-height:340px; }
+  .hero-media img{ width:100%; height:100%; object-fit:cover; display:block; }
   .hero-tag{
     position:absolute; bottom:22px; left:22px;
     background:var(--card);

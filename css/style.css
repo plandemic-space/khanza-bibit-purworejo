@@ -233,14 +233,6 @@
     padding:3px 8px; border-radius:2px;
     text-transform:uppercase;
   }
-  .ai-badge{
-    position:absolute; bottom:10px; left:10px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:9px; letter-spacing:0.03em;
-    background:rgba(42,36,28,0.82); color:var(--paper);
-    padding:3px 8px; border-radius:2px;
-    text-transform:uppercase;
-  }
   .produk-info{ padding:15px 15px 17px; }
   .produk-kode{ font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--ink-soft); letter-spacing:0.05em; margin-bottom:5px; text-transform:uppercase; }
   .produk-info h4{ font-family:'Fraunces', serif; color:var(--pine-deep); font-size:16.5px; margin-bottom:6px; line-height:1.2; }

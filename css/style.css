@@ -376,6 +376,40 @@
     border-radius:2px;
   }
 
+  /* ---------- Artikel edukasi ---------- */
+  .artikel-hero{ padding:44px 0 8px; }
+  .artikel-breadcrumb{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); margin-bottom:18px; }
+  .artikel-breadcrumb a{ text-decoration:none; color:var(--paprika); }
+  .artikel-breadcrumb a:hover{ text-decoration:underline; }
+  .artikel-body{ max-width:720px; margin:0 auto; padding:10px 26px 70px; }
+  .artikel-body h2{ font-size:24px; margin-top:40px; margin-bottom:14px; }
+  .artikel-body h3{ font-size:18px; margin-top:26px; margin-bottom:10px; color:var(--pine-deep); }
+  .artikel-body p{ font-size:15px; color:var(--ink-soft); margin-bottom:14px; }
+  .artikel-body ul, .artikel-body ol{ margin:0 0 16px 20px; color:var(--ink-soft); font-size:15px; }
+  .artikel-body li{ margin-bottom:6px; }
+  .artikel-body strong{ color:var(--ink); }
+  .artikel-body table{ width:100%; border-collapse:collapse; margin:18px 0 22px; font-size:13.5px; }
+  .artikel-body th, .artikel-body td{ border:1px solid var(--line); padding:9px 12px; text-align:left; }
+  .artikel-body th{ background:var(--paper-dark); font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.04em; }
+  .artikel-cta-box{
+    background:var(--card); border:1px solid var(--ink); border-radius:4px;
+    padding:24px 22px; margin:34px 0; text-align:center;
+  }
+  .artikel-cta-box p{ margin-bottom:14px; color:var(--ink); }
+  .artikel-faq{ border-top:1px dashed var(--line); padding-top:18px; margin-top:30px; }
+  .artikel-faq .q{ font-family:'Fraunces', serif; font-weight:600; color:var(--pine-deep); margin-bottom:4px; }
+  .artikel-lainnya{ background:var(--paper-dark); border-top:1px solid var(--line); padding:50px 0; }
+  .artikel-lainnya .grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  @media(min-width:700px){ .artikel-lainnya .grid{ grid-template-columns:repeat(3,1fr); } }
+  @media(min-width:980px){ .artikel-lainnya .grid{ grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); } }
+  .artikel-card{
+    display:block; background:var(--card); border:1px solid var(--ink); border-radius:2px;
+    padding:18px; text-decoration:none;
+  }
+  .artikel-card:hover{ transform:translateY(-3px); box-shadow:4px 5px 0 rgba(42,36,28,0.15); }
+  .artikel-card .eyebrow{ margin-bottom:8px; }
+  .artikel-card h4{ font-family:'Fraunces', serif; color:var(--pine-deep); font-size:16px; }
+
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }
   }

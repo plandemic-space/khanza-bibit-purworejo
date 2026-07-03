@@ -112,7 +112,12 @@
     display:grid;
     grid-template-columns:1fr;
   }
-  @media(min-width:960px){ .hero{ grid-template-columns: 1fr 0.92fr; } }
+  .hero-media{ order:-1; }
+  .hero-copy{ order:0; }
+  @media(min-width:960px){
+    .hero{ grid-template-columns: 1fr 0.92fr; }
+    .hero-media{ order:0; }
+  }
   .hero-copy{
     display:flex; flex-direction:column; justify-content:center;
     padding:56px 26px 40px;

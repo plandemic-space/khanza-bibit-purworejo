@@ -329,12 +329,6 @@
   .testi-foot-note{ margin-top:28px; font-size:12px; color:#9BA484; font-style:italic; }
 
   /* ---------- Galeri filmstrip ---------- */
-  .galeri-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-  @media(min-width:760px){ .galeri-grid{ grid-template-columns:repeat(4,1fr); } }
-  .galeri-item{ position:relative; }
-  .galeri-item img{ border-radius:2px; aspect-ratio:3/4; object-fit:cover; width:100%; border:1px solid var(--ink); }
-  .galeri-cap{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-soft); margin-top:8px; letter-spacing:0.02em; }
-
   /* ---------- FAQ ---------- */
   .faq-item{ border-bottom:1px dashed var(--line); padding:20px 0; }
   .faq-item summary{ cursor:pointer; font-family:'Fraunces', serif; color:var(--pine-deep); font-size:17px; font-weight:600; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }

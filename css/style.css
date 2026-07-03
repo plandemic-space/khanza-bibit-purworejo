@@ -254,6 +254,29 @@
   }
   .produk-cta:hover{ background:var(--ink); color:var(--paper); }
 
+  .produk-pilih{
+    display:flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    color:var(--ink-soft); letter-spacing:0.02em;
+    margin-bottom:9px; cursor:pointer; user-select:none;
+  }
+  .produk-pilih input{ width:15px; height:15px; accent-color:var(--pine-deep); cursor:pointer; }
+
+  .multi-wa-bar{
+    position:fixed; left:50%; bottom:20px; transform:translate(-50%, 130%);
+    z-index:61;
+    background:var(--pine-deep); color:var(--paper);
+    border-radius:6px;
+    padding:12px 14px 12px 18px;
+    display:flex; align-items:center; gap:16px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    transition:transform .25s ease;
+    max-width:92vw;
+  }
+  .multi-wa-bar.show{ transform:translate(-50%, 0); }
+  .multi-wa-bar .btn{ border-color:var(--paper); white-space:nowrap; }
+
   .produk-img.placeholder{
     display:flex; align-items:center; justify-content:center;
     background:repeating-linear-gradient(45deg, rgba(42,36,28,0.05), rgba(42,36,28,0.05) 8px, transparent 8px, transparent 16px);

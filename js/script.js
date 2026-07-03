@@ -17,10 +17,14 @@
   const toggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   toggle.addEventListener('click', ()=>{
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   navLinks.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=> navLinks.classList.remove('open'));
+    a.addEventListener('click', ()=>{
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 
   // Show nav CTA button only on wider screens
@@ -29,3 +33,23 @@
   }
   updateNavCta();
   window.addEventListener('resize', updateNavCta);
+
+  // Pilih beberapa produk sekaligus -> 1 pesan WA gabungan
+  const pilihBoxes = document.querySelectorAll('.pilih-produk');
+  const multiBar = document.getElementById('multiWaBar');
+  const multiCount = document.getElementById('multiCount');
+  const multiLink = document.getElementById('multiWaLink');
+
+  function updateMultiBar(){
+    const dipilih = Array.from(pilihBoxes).filter(c => c.checked).map(c => c.dataset.nama);
+    if(dipilih.length === 0){
+      multiBar.classList.remove('show');
+      return;
+    }
+    multiCount.textContent = dipilih.length;
+    const daftar = dipilih.join(', ');
+    const pesan = `Halo Khanza Bibit, saya tertarik dengan beberapa bibit berikut: ${daftar}. Boleh info harga & stoknya?`;
+    multiLink.href = `https://wa.me/6282224415565?text=${encodeURIComponent(pesan)}`;
+    multiBar.classList.add('show');
+  }
+  pilihBoxes.forEach(cb => cb.addEventListener('change', updateMultiBar));

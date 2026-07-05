@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khanza Bibit — Purworejo | Bibit Kayu, Buah, Hias &amp; Rempah Berlabel</title>
+<title>Khanza Bibit — Purworejo | Bibit Kayu, Buah, Hias &amp; Rempah</title>
 <meta name="description" content="Khanza Bibit, Kec. Kemiri, Purworejo. Bibit kayu, buah-buahan, hias, dan rempah-rempah berkualitas, dicek sebelum dikirim ke seluruh Indonesia. Rating 5.0 Google Maps.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:title" content="Khanza Bibit — Purworejo">
 <meta property="og:description" content="Bibit tanaman kayu, buah-buahan, hias, dan rempah-rempah berkualitas dari Purworejo. Dicek sebelum dikirim ke seluruh Indonesia.">
-<meta property="og:image" content="images/banner.jpg">
+<meta property="og:image" content="https://khanza-bibit.vercel.app/images/banner.jpg">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://khanza-bibit.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Khanza Bibit — Purworejo">
+<meta name="twitter:description" content="Bibit tanaman kayu, buah-buahan, hias, dan rempah-rempah berkualitas dari Purworejo. Dicek sebelum dikirim ke seluruh Indonesia.">
+<meta name="twitter:image" content="https://khanza-bibit.vercel.app/images/banner.jpg">
+<link rel="canonical" href="https://khanza-bibit.vercel.app/">
+<meta name="theme-color" content="#33503A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,7 +28,7 @@
 <header>
   <div class="wrap nav">
     <a href="#top" class="brand">
-      <img loading="lazy" src="images/logo.png" alt="Logo Khanza Bibit">
+      <img loading="lazy" src="images/logo.png" alt="Logo Khanza Bibit" width="400" height="400">
       <span class="brand-text">Khanza Bibit<span>Kec. Kemiri · Purworejo</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -30,7 +38,7 @@
       <a href="#kontak">Kontak</a>
     </nav>
     <a class="btn btn-fill btn-sm" style="display:none" id="navCta" href="https://wa.me/6282224415565?text=Halo%20Khanza%20Bibit%2C%20saya%20mau%20tanya%20bibit%20tanaman" target="_blank" rel="noopener">Chat Admin</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
   </div>
 </header>
 
@@ -48,8 +56,8 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="images/alpukat-sab034.jpg" alt="Bibit alpukat unggul Khanza Bibit, kode SAB 034">
-      <span class="hero-tag">Bibit Alpukat SAB&nbsp;034</span>
+      <img src="images/pucuk-merah-kebun.jpg" alt="Kebun bibit pucuk merah Khanza Bibit" width="900" height="506">
+      <span class="hero-tag">Kebun Bibit Khanza</span>
     </div>
   </section>
 
@@ -111,13 +119,14 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/alpukat-sab034.jpg" alt="Bibit alpukat SAB 034">
+            <img loading="lazy" src="images/alpukat-sab034.jpg" alt="Bibit alpukat SAB 034" width="756" height="1008">
             <span class="stok-badge">Stok Terbatas</span>
           </div>
           <div class="produk-info">
             <div class="produk-kode">Kode SAB&nbsp;034</div>
             <h4>Alpukat SAB&nbsp;034</h4>
             <p class="produk-desc">Daun lebar, batang kokoh — favorit untuk lahan sedang.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Alpukat SAB 034"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Alpukat%20SAB%20034%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -126,12 +135,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/alpukat-black-avocado.jpg" alt="Bibit alpukat Black Avocado">
+            <img loading="lazy" src="images/alpukat-black-avocado.jpg" alt="Bibit alpukat Black Avocado" width="700" height="1244">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Varietas Black Avo</div>
             <h4>Alpukat Black Avocado</h4>
             <p class="produk-desc">Kulit gelap saat matang, tekstur creamy, banyak dicari.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Alpukat Black Avocado"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Alpukat%20Black%20Avocado%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -140,12 +150,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/alpukat-ta21.jpg" alt="Bibit alpukat TA-21">
+            <img loading="lazy" src="images/alpukat-ta21.jpg" alt="Bibit alpukat TA-21" width="700" height="933">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Kode TA&#8209;21</div>
             <h4>Alpukat TA&#8209;21</h4>
             <p class="produk-desc">Pertumbuhan cepat, cocok untuk penanaman skala kebun.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Alpukat TA-21"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Alpukat%20TA-21%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -154,12 +165,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/durian-duri-hitam.jpg" alt="Bibit durian duri hitam">
+            <img loading="lazy" src="images/durian-duri-hitam.jpg" alt="Bibit durian duri hitam" width="700" height="1244">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Durian Duri Hitam</h4>
             <p class="produk-desc">Varietas durian populer dengan ciri khas kulit berduri gelap.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Durian Duri Hitam"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Durian%20Duri%20Hitam%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -168,13 +180,14 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/kakao.jpg" alt="Bibit kakao">
+            <img loading="lazy" src="images/kakao.jpg" alt="Bibit kakao" width="700" height="1244">
             <span class="stok-badge">Stok Terbatas</span>
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Kakao</h4>
             <p class="produk-desc">Bibit kakao pilihan, stok terbatas mengikuti musim panen.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kakao"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kakao%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -183,12 +196,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/manggis.jpg" alt="Bibit manggis">
+            <img loading="lazy" src="images/manggis.jpg" alt="Bibit manggis" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Manggis</h4>
             <p class="produk-desc">Buah asli unggulan Purworejo, rasa manis dengan kulit ungu khas.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Manggis"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Manggis%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -197,12 +211,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/duku.jpg" alt="Bibit duku">
+            <img loading="lazy" src="images/duku.jpg" alt="Bibit duku" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Duku</h4>
             <p class="produk-desc">Sama seperti manggis, ciri khas buah daerah Purworejo.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Duku"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Duku%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -211,12 +226,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/kelengkeng.jpg" alt="Bibit kelengkeng">
+            <img loading="lazy" src="images/kelengkeng.jpg" alt="Bibit kelengkeng" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Kelengkeng</h4>
             <p class="produk-desc">Bibit unggul, cepat berbuah dan hasilnya manis.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kelengkeng"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kelengkeng%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -225,12 +241,13 @@
           <div class="produk-band" style="background:var(--ochre)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/jambu-kristal.jpg" alt="Bibit jambu kristal">
+            <img loading="lazy" src="images/jambu-kristal.jpg" alt="Bibit jambu kristal" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h4>Jambu Kristal</h4>
             <p class="produk-desc">Daging buah renyah, biji sedikit, favorit keluarga.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Jambu Kristal"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Jambu%20Kristal%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -242,12 +259,13 @@
           <div class="produk-band" style="background:var(--moss-solid)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/pucuk-merah.jpg" alt="Bibit pucuk merah">
+            <img loading="lazy" src="images/pucuk-merah.jpg" alt="Bibit pucuk merah" width="700" height="1244">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Hias</div>
             <h4>Pucuk Merah</h4>
             <p class="produk-desc">Daun muda merah cerah, favorit untuk pagar tanaman & taman.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Pucuk Merah"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Pucuk%20Merah%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -256,12 +274,13 @@
           <div class="produk-band" style="background:var(--moss-solid)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/palem-kipas.jpg" alt="Bibit palem kipas">
+            <img loading="lazy" src="images/palem-kipas.jpg" alt="Bibit palem kipas" width="900" height="1600">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Hias</div>
             <h4>Palem Kipas</h4>
             <p class="produk-desc">Daun berbentuk kipas lebar, cocok jadi aksen taman tropis.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Palem Kipas"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Palem%20Kipas%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -270,12 +289,13 @@
           <div class="produk-band" style="background:var(--moss-solid)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/sadang.jpg" alt="Bibit sadang">
+            <img loading="lazy" src="images/sadang.jpg" alt="Bibit sadang" width="700" height="1244">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Hias</div>
             <h4>Sadang</h4>
             <p class="produk-desc">Tanaman hias khas kebun Khanza, tampilan unik untuk taman.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Sadang"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Sadang%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -284,12 +304,13 @@
           <div class="produk-band" style="background:var(--moss-solid)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/aglonema.jpg" alt="Bibit aglonema">
+            <img loading="lazy" src="images/aglonema.jpg" alt="Bibit aglonema" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Hias</div>
             <h4>Aglonema</h4>
             <p class="produk-desc">Daun berwarna-warni, favorit tanaman hias dalam ruangan.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Aglonema"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Aglonema%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -298,12 +319,13 @@
           <div class="produk-band" style="background:var(--moss-solid)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/kamboja-jepang.jpg" alt="Bibit kamboja jepang adenium">
+            <img loading="lazy" src="images/kamboja-jepang.jpg" alt="Bibit kamboja jepang adenium" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Hias</div>
             <h4>Kamboja Jepang (Adenium)</h4>
             <p class="produk-desc">Batang unik menggembung, bunga cantik, cocok untuk pot.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kamboja Jepang (Adenium)"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kamboja%20Jepang%20%28Adenium%29%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -315,12 +337,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/jati.jpg" alt="Bibit jati">
+            <img loading="lazy" src="images/jati.jpg" alt="Bibit jati" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Jati</h4>
             <p class="produk-desc">Kayu keras kualitas tinggi, cocok untuk investasi jangka panjang.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Jati"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Jati%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -329,12 +352,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/albasia.jpg" alt="Bibit albasia sengon">
+            <img loading="lazy" src="images/albasia.jpg" alt="Bibit albasia sengon" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Albasia</h4>
             <p class="produk-desc">Pertumbuhan cepat, banyak dipilih untuk lahan produksi kayu.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Albasia"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Albasia%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -343,12 +367,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/sonokeling.jpg" alt="Bibit sonokeling">
+            <img loading="lazy" src="images/sonokeling.jpg" alt="Bibit sonokeling" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Sonokeling</h4>
             <p class="produk-desc">Kayu bernilai tinggi dengan serat khas, favorit untuk mebel.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Sonokeling"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Sonokeling%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -357,12 +382,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/mahoni.jpg" alt="Bibit mahoni">
+            <img loading="lazy" src="images/mahoni.jpg" alt="Bibit mahoni" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Mahoni</h4>
             <p class="produk-desc">Pohon peneduh sekaligus penghasil kayu berkualitas.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Mahoni"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Mahoni%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -371,12 +397,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/trembesi.jpg" alt="Bibit trembesi">
+            <img loading="lazy" src="images/trembesi.jpg" alt="Bibit trembesi" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Trembesi</h4>
             <p class="produk-desc">Pohon peneduh besar, populer untuk penghijauan.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Trembesi"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Trembesi%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -385,12 +412,13 @@
           <div class="produk-band" style="background:var(--pine)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/waru.jpg" alt="Bibit waru">
+            <img loading="lazy" src="images/waru.jpg" alt="Bibit waru" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Kayu</div>
             <h4>Waru</h4>
             <p class="produk-desc">Daun besar berbentuk hati, mudah tumbuh di berbagai lahan.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Waru"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Waru%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -402,12 +430,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/daun-salam.jpg" alt="Bibit daun salam">
+            <img loading="lazy" src="images/daun-salam.jpg" alt="Bibit daun salam" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Daun Salam</h4>
             <p class="produk-desc">Rempah dapur wajib, mudah tumbuh di pekarangan rumah.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Daun Salam"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Daun%20Salam%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -416,12 +445,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/kemangi.jpg" alt="Bibit kemangi">
+            <img loading="lazy" src="images/kemangi.jpg" alt="Bibit kemangi" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Kemangi</h4>
             <p class="produk-desc">Daun aromatik segar, favorit untuk lalapan & masakan rumahan.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kemangi"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kemangi%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -430,12 +460,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/jahe.jpg" alt="Bibit jahe">
+            <img loading="lazy" src="images/jahe.jpg" alt="Bibit jahe" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Jahe</h4>
             <p class="produk-desc">Rimpang serbaguna untuk kesehatan dan bumbu dapur.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Jahe"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Jahe%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -444,12 +475,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/mint.jpg" alt="Bibit mint">
+            <img loading="lazy" src="images/mint.jpg" alt="Bibit mint" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Mint</h4>
             <p class="produk-desc">Aroma segar, cocok untuk minuman & campuran masakan.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Mint"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Mint%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -458,12 +490,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/lengkuas.jpg" alt="Bibit lengkuas">
+            <img loading="lazy" src="images/lengkuas.jpg" alt="Bibit lengkuas" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Lengkuas</h4>
             <p class="produk-desc">Rimpang khas masakan Nusantara, tahan lama & mudah dirawat.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Lengkuas"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Lengkuas%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -472,12 +505,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/kunyit.jpg" alt="Bibit kunyit">
+            <img loading="lazy" src="images/kunyit.jpg" alt="Bibit kunyit" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Kunyit</h4>
             <p class="produk-desc">Rimpang serbaguna, umum dipakai bumbu & jamu tradisional.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kunyit"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kunyit%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -486,12 +520,13 @@
           <div class="produk-band" style="background:var(--paprika)"></div>
           <div class="produk-img">
             <span class="produk-hole"></span>
-            <img loading="lazy" src="images/serai.jpg" alt="Bibit serai">
+            <img loading="lazy" src="images/serai.jpg" alt="Bibit serai" width="700" height="1050">
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Rempah</div>
             <h4>Serai</h4>
             <p class="produk-desc">Aroma khas masakan Nusantara, mudah dirawat & tahan lama.</p>
+            <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Serai"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Serai%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
         </div>
@@ -558,36 +593,10 @@
           <div class="who">— Pelanggan Purworejo</div>
         </div>
       </div>
-      <p class="testi-foot-note">Testimoni di atas adalah contoh ilustrasi dan akan diganti dengan testimoni asli dari pelanggan kami.</p>
     </div>
   </section>
 
   <!-- GALERI -->
-  <section class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Dari Kebun</span>
-      <h2>Galeri Kebun Kami</h2>
-    </div>
-    <div class="galeri-grid">
-      <div class="galeri-item">
-        <img loading="lazy" src="images/alpukat-closeup.jpg" alt="Bibit alpukat close up">
-        <div class="galeri-cap">Bibit Alpukat</div>
-      </div>
-      <div class="galeri-item">
-        <img loading="lazy" src="images/pucuk-merah-kebun.jpg" alt="Barisan bibit pucuk merah di kebun">
-        <div class="galeri-cap">Barisan Pucuk Merah</div>
-      </div>
-      <div class="galeri-item">
-        <img loading="lazy" src="images/durian-duri-hitam.jpg" alt="Bibit durian duri hitam">
-        <div class="galeri-cap">Bibit Durian</div>
-      </div>
-      <div class="galeri-item">
-        <img loading="lazy" src="images/palem-kipas.jpg" alt="Bibit palem kipas">
-        <div class="galeri-cap">Palem Kipas</div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="wrap" style="max-width:780px;">
     <div class="section-head">
@@ -612,6 +621,35 @@
     </details>
   </section>
 
+  <!-- PANDUAN MENANAM -->
+  <section class="artikel-lainnya" style="border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:26px;">
+        <span class="eyebrow">Panduan Menanam</span>
+        <h2 style="font-size:clamp(24px,3vw,32px); margin-top:8px;">Tips Merawat Bibit dari Khanza</h2>
+        <p>Sebelum atau setelah membeli, baca dulu panduan dasar merawat bibit sesuai kategorinya.</p>
+      </div>
+      <div class="grid">
+        <a class="artikel-card" href="artikel/cara-tanam-alpukat.html">
+          <span class="eyebrow" style="color:var(--ochre)">Buah</span>
+          <h4>Cara Menanam Bibit Alpukat Agar Cepat Berbuah</h4>
+        </a>
+        <a class="artikel-card" href="artikel/panduan-tanam-kayu.html">
+          <span class="eyebrow" style="color:var(--pine)">Kayu</span>
+          <h4>Panduan Menanam Bibit Kayu untuk Investasi Jangka Panjang</h4>
+        </a>
+        <a class="artikel-card" href="artikel/rawat-tanaman-hias.html">
+          <span class="eyebrow" style="color:var(--moss-solid)">Hias</span>
+          <h4>Merawat Tanaman Hias Agar Tumbuh Subur di Rumah</h4>
+        </a>
+        <a class="artikel-card" href="artikel/tanam-rempah-pot.html">
+          <span class="eyebrow" style="color:var(--paprika)">Rempah</span>
+          <h4>Cara Menanam Rempah Dapur di Lahan Sempit atau Pot</h4>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -620,7 +658,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img loading="lazy" src="images/logo.png" alt="Logo Khanza Bibit">
+          <img loading="lazy" src="images/logo.png" alt="Logo Khanza Bibit" width="400" height="400">
           <span>Khanza Bibit</span>
         </div>
         <p style="max-width:320px;">Menyediakan bibit tanaman kayu, buah-buahan, hias, dan rempah-rempah berkualitas. Berbasis di Purworejo, siap kirim ke seluruh Indonesia.</p>
@@ -652,7 +690,83 @@
 
 <a class="float-wa" href="https://wa.me/6282224415565?text=Halo%20Khanza%20Bibit%2C%20saya%20mau%20tanya%20bibit%20tanaman" target="_blank" rel="noopener" aria-label="Chat WhatsApp">&#128222;</a>
 
+<div class="multi-wa-bar" id="multiWaBar">
+  <span><strong id="multiCount">0</strong> bibit dipilih</span>
+  <a id="multiWaLink" class="btn btn-fill btn-sm" href="#" target="_blank" rel="noopener">Tanya via WA →</a>
+</div>
+
 <script src="js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GardenStore",
+  "name": "Khanza Bibit",
+  "image": "https://khanza-bibit.vercel.app/images/banner.jpg",
+  "url": "https://khanza-bibit.vercel.app/",
+  "telephone": "+6282224415565",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ngemplak No.02/02, Dusun IV",
+    "addressLocality": "Kec. Kemiri",
+    "addressRegion": "Kabupaten Purworejo, Jawa Tengah",
+    "postalCode": "54262",
+    "addressCountry": "ID"
+  },
+  "sameAs": [
+    "https://www.tiktok.com/@teguh.wibowo561",
+    "https://maps.app.goo.gl/UqwznX7Ne4UvaN2a9"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kenapa harga bibit tidak dicantumkan di sini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harga dan stok bibit kami dapat berubah mengikuti musim. Untuk mendapatkan info yang paling akurat dan terbaru, silakan hubungi admin kami langsung via WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana kalau bibit rusak saat pengiriman?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami pastikan bibit dalam kondisi terbaik dan dikemas dengan aman sebelum berangkat. Kondisi selama perjalanan tergantung layanan ekspedisi, jadi silakan hubungi admin untuk kendala setelah bibit sampai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah bisa kirim ke luar Jawa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Kami siap mengirim bibit ke seluruh Indonesia, dengan pengemasan yang aman untuk perjalanan jauh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah bisa datang langsung ke kebun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tentu. Kebun kami berlokasi di Kec. Kemiri, Kabupaten Purworejo, dan buka 24 jam. Kami sarankan untuk menghubungi kami terlebih dahulu sebelum berkunjung."
+      }
+    }
+  ]
+}
+</script>
 
 </body>
 </html>

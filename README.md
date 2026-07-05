@@ -135,7 +135,7 @@ Ada di `js/script.js` — logikanya simpel, tidak pakai library apapun (vanilla 
 ## 🎨 Tentang Desain
 
 - **Warna & font**: tema "kertas kebun" — krem, hijau pinus, aksen ochre/paprika sesuai kategori produk (kayu=hijau, buah=kuning, hias=hijau lumut, rempah=merah)
-- **Elemen khas**: kartu produk dibuat menyerupai label gantung bibit (nursery tag) — sesuai kebiasaan Khanza yang selalu memberi label pada tiap bibit
+- **Elemen khas**: kartu produk dibuat menyerupai label gantung bibit (nursery tag) — terinspirasi dari kebiasaan Khanza melabeli bibit yang punya banyak varian (seperti alpukat), supaya tidak tertukar
 - Semua tombol "Tanya via WA" otomatis membuka WhatsApp dengan pesan yang sudah terisi nama produk
 
 ---

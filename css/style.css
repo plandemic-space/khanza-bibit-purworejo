@@ -388,6 +388,23 @@
     border-radius:2px;
   }
 
+  /* ---------- Skip to content link ---------- */
+  .skip-link{
+    position:absolute;
+    left:-9999px;
+    top:0;
+    z-index:1000;
+    background:var(--pine-deep, #1B2A1B);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:0 0 8px 0;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .skip-link:focus{
+    left:0;
+  }
+
   /* ---------- Artikel edukasi ---------- */
   .artikel-hero{ padding:44px 0 8px; }
   .artikel-breadcrumb{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); margin-bottom:18px; }

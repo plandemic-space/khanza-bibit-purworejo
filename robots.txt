@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khanza-bibit.vercel.app/sitemap.xml
+Sitemap: https://khanzabibit.vercel.app/sitemap.xml

@@ -351,7 +351,7 @@
   .footer-grid{ display:grid; grid-template-columns:1fr; gap:38px; }
   @media(min-width:760px){ .footer-grid{ grid-template-columns:1.3fr 1fr 1fr; } }
   .footer-brand{ display:flex; align-items:center; gap:11px; margin-bottom:16px; }
-  .footer-brand img{ height:40px; width:40px; border-radius:50%; }
+  .footer-brand img{ height:40px; width:40px; border-radius:50%; background:#F7F4EF; }
   .footer-brand span{ font-family:'Fraunces', serif; font-size:19px; color:#fff; font-weight:600; }
   footer h3{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#E2B45A; margin-bottom:14px; }
   footer p, footer a{ font-size:13.5px; color:#CBD1B9; text-decoration:none; line-height:1.85; }

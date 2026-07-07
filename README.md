@@ -143,8 +143,8 @@ Ada di `js/script.js` — logikanya simpel, tidak pakai library apapun (vanilla 
 ## 📍 Info Bisnis (tercantum di web)
 
 - **Nama**: Khanza Bibit
-- **Alamat**: Ngemplak No.02/02, Dusun IV, Kec. Kemiri, Kabupaten Purworejo, Jawa Tengah 54262
+- **Alamat**: Ngemplak RT 02 / RW 02, Desa Samping, Kec. Kemiri, Kabupaten Purworejo, Jawa Tengah 54262
 - **WhatsApp**: 0822-2441-5565
 - **TikTok**: [@teguh.wibowo561](https://www.tiktok.com/@teguh.wibowo561)
 - **Google Maps**: [Lihat lokasi](https://maps.app.goo.gl/UqwznX7Ne4UvaN2a9)
-- **Rating**: 5.0 ⭐ (Google Maps)
+- **Rating**: 4.9 ⭐ dari 12 ulasan (Google Maps) — *cek berkala, ada 11 ulasan baru menunggu masuk resmi ke Maps*

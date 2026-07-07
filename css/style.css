@@ -25,6 +25,7 @@
     -webkit-font-smoothing:antialiased;
   }
   img{max-width:100%; display:block;}
+  picture{display:block;}
   a{color:inherit;}
   .wrap{max-width:1180px; margin:0 auto; padding:0 26px;}
 

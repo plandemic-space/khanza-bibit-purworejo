@@ -3,6 +3,8 @@
 **Metode:** Temuan yang tumpang tindih antar audit digabung jadi satu item. Item yang saling bertentangan diselesaikan lewat analisis trade-off di Bagian 0 sebelum masuk backlog, supaya tidak ada instruksi kontradiktif ke tim eksekusi.
 **Domain resmi:** `https://khanzabibit.vercel.app`. `khanza-bibit.vercel.app` (bertanda hubung) = domain lama, akan di-redirect.
 
+**Dokumen ini sekarang jadi satu-satunya sumber kebenaran** untuk status progres & data bisnis (alamat, WA, rating). `README.md` dan `PROJECT-SETUP.md` cuma merujuk ke sini, gak nyimpen angka sendiri lagi. `Roadmap-Implementasi-Khanza-Bibit.md` sudah diarsipkan — isinya sudah terserap ke sini, gak perlu diupload/dibaca lagi kecuali buat referensi historis.
+
 ---
 
 ## ⚠️ CATATAN VERIFIKASI (update terakhir: audit langsung ke isi zip, bukan cuma laporan sesi)
@@ -78,18 +80,18 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 | QW8 | Perbaiki subheadline hero (UI/UX-H12) | Headline & subheadline hero redundan, ganti subheadline jadi pesan pelengkap (area kirim/kecepatan respons). | Content Writer |
 
 **Checklist implementasi gabungan (developer):**
-- [ ] Cek & hapus semua referensi `khanza-bibit` (tanda hubung) di environment variable/hardcode, redeploy.
-- [ ] Set 301 redirect domain lama → domain baru + noindex sementara di domain lama.
-- [ ] Samakan alamat & link Maps di footer homepage + 4 artikel + schema JSON-LD.
-- [ ] Tambahkan blok `GeoCoordinates` (lat -7.659488, long 109.8746012) ke schema `GardenStore`.
-- [ ] Pasang link `wa.me` dengan teks prefilled per produk untuk CTA harga.
-- [ ] Update copy rating & badge stok sesuai keputusan Owner.
+- [x] Cek & hapus semua referensi `khanza-bibit` (tanda hubung) di environment variable/hardcode, redeploy. *(diverifikasi: nol hasil grep untuk `khanza-bibit.vercel` di seluruh file)*
+- [x] Set 301 redirect domain lama → domain baru + noindex sementara di domain lama.
+- [x] Samakan alamat & link Maps di footer homepage + 4 artikel + schema JSON-LD.
+- [x] Tambahkan blok `GeoCoordinates` (lat -7.659488, long 109.8746012) ke schema `GardenStore`.
+- [x] Pasang link `wa.me` dengan teks prefilled per produk untuk CTA harga. *(31 link diverifikasi)*
+- [ ] Update copy rating & badge stok sesuai keputusan Owner. *(badge stok sudah beres, tapi angka rating masih nunggu konfirmasi final Owner — lihat QW6)*
 
 **Checklist implementasi (owner):**
-- [ ] Konfirmasi status testimoni (asli/ilustrasi) dan beri izin pemakaian kalau asli.
-- [ ] Tentukan kebijakan garansi riil (hari, syarat klaim, solusi).
-- [ ] Tandai produk yang stoknya benar-benar terbatas musim ini.
-- [ ] Submit ulang homepage domain baru via Google Search Console setelah QW1 selesai.
+- [x] Konfirmasi status testimoni (asli/ilustrasi) dan beri izin pemakaian kalau asli.
+- [x] Tentukan kebijakan garansi riil (hari, syarat klaim, solusi).
+- [x] Tandai produk yang stoknya benar-benar terbatas musim ini. *(hasil: tidak ada yang benar-benar terbatas, badge dihapus)*
+- [ ] Submit ulang homepage domain baru via Google Search Console setelah QW1 selesai. *(aksi manual di luar kode, gak bisa diverifikasi dari repo)*
 
 ## 1.2 Perbaikan Teknikal Cepat (gabungan item SEO + Accessibility, semua low-effort)
 
@@ -108,17 +110,17 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 | QW19 | Pangkas title/meta description kepanjangan (SEO-M9) | Title homepage & 1 artikel serta meta desc homepage melebihi batas render SERP aman. | SEO/Content Writer |
 
 **Checklist implementasi (developer, bisa dikerjakan sekaligus dalam 1 sesi ~1 hari):**
-- [ ] Find & replace semua `<h4>` yang seharusnya `<h3>` di index.html + 4 artikel, sesuaikan CSS selector.
-- [ ] Tambahkan variabel warna kontras baru, terapkan ke `.testi .stars`, label `.eyebrow`, `.foot-bottom`.
-- [ ] Tambahkan `width`/`height` ke 2 instance logo di tiap 4 file artikel.
-- [ ] Tambahkan preload + `fetchpriority="high"` untuk hero image.
-- [ ] Tambahkan 3 meta tag Twitter Card yang hilang di 4 artikel.
-- [ ] Bungkus breadcrumb dengan markup semantik + tambahkan JSON-LD BreadcrumbList.
-- [ ] Tambahkan skip-link setelah `<body>` + CSS fokus.
-- [ ] Ganti karakter emoji ikon dengan SVG inline `currentColor`.
-- [ ] Ganti `../index.html` → `../` di 4 artikel + redirect permanen di `vercel.json`.
-- [ ] Buat `404.html` dengan header/footer konsisten.
-- [ ] Pangkas title/meta description yang kepanjangan.
+- [x] Find & replace semua `<h4>` yang seharusnya `<h3>` di index.html + 4 artikel, sesuaikan CSS selector. *(nol hasil grep `<h4` di semua file)*
+- [x] Tambahkan variabel warna kontras baru, terapkan ke `.testi .stars`, label `.eyebrow`, `.foot-bottom`.
+- [x] Tambahkan `width`/`height` ke 2 instance logo di tiap 4 file artikel.
+- [x] Tambahkan preload + `fetchpriority="high"` untuk hero image.
+- [x] Tambahkan 3 meta tag Twitter Card yang hilang di 4 artikel. *(4 meta twitter: terverifikasi di tiap file)*
+- [x] Bungkus breadcrumb dengan markup semantik + tambahkan JSON-LD BreadcrumbList. *(terverifikasi di 4 artikel)*
+- [x] Tambahkan skip-link setelah `<body>` + CSS fokus. *(terverifikasi di 6 halaman)*
+- [x] Ganti karakter emoji ikon dengan SVG inline `currentColor`.
+- [x] Ganti `../index.html` → `../` di 4 artikel + redirect permanen di `vercel.json`.
+- [x] Buat `404.html` dengan header/footer konsisten.
+- [x] Pangkas title/meta description yang kepanjangan.
 
 ---
 
@@ -227,65 +229,68 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 # BAGIAN 4 — CHECKLIST PER PERAN (Ringkasan Lintas Semua Kategori)
 
 ## Checklist Developer
-- [ ] QW1 — Fix canonical/redirect domain
-- [ ] QW2 — Update NAP + geo coordinates di kode & schema
-- [ ] QW4 — Pasang kebijakan garansi ke web
-- [ ] QW5 — Pasang CTA & link wa.me prefilled
-- [ ] QW7 — Terapkan badge stok terbatas sesuai data Owner
-- [ ] QW9–QW19 — Seluruh perbaikan teknikal cepat (heading, kontras, CLS, LCP, Twitter Card, breadcrumb, skip-link, ikon SVG, internal link, 404)
-- [ ] HI1 — Implementasi section galeri
-- [ ] HI2 — Convert & resize gambar ke WebP
-- [ ] HI3, HI4 — Implementasi halaman Tentang Kami & Area Pengiriman
-- [ ] HI6 — Implementasi lead-capture ringan (embed, bukan sistem baru)
-- [ ] HI8 — Tambah HSTS + CSP
-- [ ] LT3, LT5, LT6, LT9 — sesuai jadwal jangka panjang
+- [x] QW1 — Fix canonical/redirect domain
+- [x] QW2 — Update NAP + geo coordinates di kode & schema
+- [x] QW4 — Pasang kebijakan garansi ke web
+- [x] QW5 — Pasang CTA & link wa.me prefilled
+- [x] QW7 — Terapkan badge stok terbatas sesuai data Owner
+- [x] QW9–QW19 — Seluruh perbaikan teknikal cepat (heading, kontras, CLS, LCP, Twitter Card, breadcrumb, skip-link, ikon SVG, internal link, 404)
+- [ ] ~~HI1 — Implementasi section galeri~~ *(dibatalkan — keputusan Owner, cukup FB & TikTok, lihat status Bagian 5)*
+- [x] HI2 — Convert & resize gambar ke WebP
+- [x] HI3 — Implementasi halaman Tentang Kami
+- [ ] HI4 — Implementasi halaman Area Pengiriman *(di-skip dulu, nunggu data ekspedisi/kota tujuan)*
+- [ ] ~~HI6 — Implementasi lead-capture ringan (embed, bukan sistem baru)~~ *(dibatalkan — lihat status Bagian 5)*
+- [x] HI8 — Tambah HSTS + CSP
+- [x] LT9 — Polish UI minor (tap target + navbar shrink)
+- [ ] LT3, LT5, LT6 — sesuai jadwal jangka panjang
 
 ## Checklist SEO Specialist
-- [ ] QW1 — Verifikasi canonical/sitemap/robots.txt sinkron, submit ulang di Search Console
-- [ ] QW14 — Validasi BreadcrumbList & QW2 geo lewat Rich Results Test
-- [ ] QW19 — Pangkas title/description + mulai riset keyword lokal
+- [x] QW1 — Verifikasi canonical/sitemap/robots.txt sinkron di kode *(submit manual ke Search Console masih aksi terpisah di luar repo)*
+- [x] QW14 — BreadcrumbList & QW2 geo sudah ada di kode *(validasi lewat Rich Results Test masih aksi manual terpisah)*
+- [x] QW19 — Pangkas title/description
 - [ ] HI5 — Riset 10-15 keyword long-tail lokal untuk artikel baru
 - [ ] Pantau Search Console mingguan untuk status indexing pasca-fix domain
 - [ ] Jalankan PageSpeed Insights setelah HI2 untuk verifikasi dampak nyata
 
 ## Checklist UI Designer
-- [ ] QW10 — Tentukan nilai warna baru yang lolos kontras AA
-- [ ] QW16 — Desain/pilih SVG icon set pengganti emoji
-- [ ] HI1 — Desain layout section galeri
-- [ ] HI3 — Desain halaman Tentang Kami konsisten sistem desain
-- [ ] LT9 — Review polish UI minor
+- [x] QW10 — Tentukan nilai warna baru yang lolos kontras AA
+- [x] QW16 — Desain/pilih SVG icon set pengganti emoji
+- [ ] ~~HI1 — Desain layout section galeri~~ *(dibatalkan — keputusan Owner)*
+- [x] HI3 — Desain halaman Tentang Kami konsisten sistem desain
+- [x] LT9 — Review polish UI minor
 
 ## Checklist Content Writer
-- [ ] QW3 — Tulis disclosure testimoni (stopgap)
-- [ ] QW4 — Tulis kebijakan garansi final
-- [ ] QW5 — Tulis copy CTA harga & FAQ jujur
-- [ ] QW6 — Update copy rating & waktu respons
-- [ ] QW8 — Tulis ulang subheadline hero
-- [ ] QW19 — Revisi title/meta description
-- [ ] HI1 — Tulis caption foto galeri
-- [ ] HI3, HI4 — Tulis narasi Tentang Kami & Area Pengiriman
+- [x] QW3 — Testimoni asli dipakai langsung (disclosure stopgap gak jadi perlu)
+- [x] QW4 — Tulis kebijakan garansi final
+- [x] QW5 — Tulis copy CTA harga & FAQ jujur
+- [ ] QW6 — Update copy rating & waktu respons *(rating sudah, waktu respons WA belum ada di kode)*
+- [x] QW8 — Tulis ulang subheadline hero
+- [x] QW19 — Revisi title/meta description
+- [ ] ~~HI1 — Tulis caption foto galeri~~ *(dibatalkan — keputusan Owner)*
+- [x] HI3 — Tulis narasi Tentang Kami
+- [ ] HI4 — Tulis narasi Area Pengiriman *(di-skip dulu)*
 - [ ] HI5 — Tulis 4 artikel edukasi baru
-- [ ] HI7 — Susun ulang testimoni dengan data asli
+- [x] HI7 — Susun ulang testimoni dengan data asli *(6 testimoni bernama asli sudah tayang)*
 
 ## Checklist Owner
-- [ ] QW1 — Konfirmasi domain final (sudah: khanzabibit.vercel.app)
-- [ ] QW2 — Konfirmasi NAP & link Maps final (sudah: koordinat & link didapat)
-- [ ] QW3 — Konfirmasi status testimoni + izin pemakaian
-- [ ] QW4 — Tentukan kebijakan garansi riil
-- [ ] QW5 — Konfirmasi tetap tidak menampilkan harga (sudah final, lihat T1)
-- [ ] QW6 — Sudah: 11 ulasan dikonfirmasi
-- [ ] QW7 — Tandai produk yang stoknya benar-benar terbatas
-- [ ] HI1 — Ambil foto kebun & proses packing
-- [ ] HI3 — Sediakan cerita & foto untuk halaman Tentang Kami
-- [ ] HI4 — Beri data ekspedisi & kota tujuan
-- [ ] HI7 — Hubungi pelanggan lama untuk testimoni asli (sebar permintaan, jangan serentak)
+- [x] QW1 — Konfirmasi domain final (sudah: khanzabibit.vercel.app)
+- [x] QW2 — Konfirmasi NAP & link Maps final (sudah: koordinat & link didapat)
+- [x] QW3 — Konfirmasi status testimoni + izin pemakaian
+- [x] QW4 — Tentukan kebijakan garansi riil
+- [x] QW5 — Konfirmasi tetap tidak menampilkan harga (sudah final, lihat T1)
+- [ ] QW6 — Konfirmasi angka final ulasan Google Maps *(kode masih pakai "4.9 dari 12 ulasan", tunggu konfirmasi 11 ulasan baru resmi masuk)*
+- [x] QW7 — Tandai produk yang stoknya benar-benar terbatas *(hasil: tidak ada, badge dihapus)*
+- [ ] ~~HI1 — Ambil foto kebun & proses packing~~ *(dibatalkan — keputusan Owner, cukup FB & TikTok)*
+- [x] HI3 — Sediakan cerita & foto untuk halaman Tentang Kami *(gak perlu lagi — dibuat dari data yang sudah ada)*
+- [ ] HI4 — Beri data ekspedisi & kota tujuan *(biasanya diposting di TikTok — perlu direkap manual dulu, gak bisa Claude tarik otomatis dari TikTok)*
+- [x] HI7 — Hubungi pelanggan lama untuk testimoni asli (sebar permintaan, jangan serentak)
 - [ ] LT1, LT2, LT3, LT6, LT7 — Keputusan bisnis jangka panjang
 
 ## Checklist Marketing
 - [ ] QW6 — Bantu susun copy rating & waktu respons
-- [ ] HI6 — Tentukan bentuk lead magnet untuk traffic dingin
-- [ ] HI7 — Bantu follow-up WA ke pelanggan lama untuk testimoni
-- [ ] QW7 — Bantu komunikasi urgency stok yang jujur
+- [ ] ~~HI6 — Tentukan bentuk lead magnet untuk traffic dingin~~ *(dibatalkan)*
+- [x] HI7 — Bantu follow-up WA ke pelanggan lama untuk testimoni
+- [x] QW7 — Bantu komunikasi urgency stok yang jujur
 - [ ] LT1 — Riset kombinasi produk untuk bundling
 - [ ] LT2 — Jalankan follow-up musim tanam ke database pelanggan
 - [ ] LT4 — Koordinasi produksi video tur kebun
@@ -312,17 +317,17 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 | Quick Win | QW13 — Lengkapi Twitter Card 4 artikel | Rendah-Sedang | Rendah | ✅ Selesai — 4 meta tag lengkap di semua artikel |
 | Quick Win | QW14 — BreadcrumbList schema | Sedang | Rendah-Sedang | ✅ Selesai — ada di 4 artikel |
 | Quick Win | QW15 — Skip-to-content link | Sedang | Rendah | ✅ Selesai — ada di 5 halaman |
-| Quick Win | QW16 — Ganti ikon emoji jadi SVG | Sedang | Rendah-Sedang | ✅ Selesai — tidak ada emoji Unicode tersisa |
+| Quick Win | QW16 — Ganti ikon emoji jadi SVG | Sedang | Rendah-Sedang | ✅ Selesai — sempat salah ditandai selesai sebelumnya (cuma `index.html` yang kepasang SVG); sekarang 4 file artikel juga sudah diganti ke SVG inline yang sama (hamburger, back-to-top, WA), diverifikasi nol sisa entity `&#9776;`/`&#8593;`/`&#128222;` di seluruh situs |
 | Quick Win | QW17 — Internal link index.html→/ | Sedang | Rendah | ✅ Selesai — redirect permanent di vercel.json + link `../` di artikel |
-| Quick Win | QW18 — Custom 404 page | Kecil | Rendah | ✅ Selesai — noindex, skip-link, CTA katalog & WA ada |
+| Quick Win | QW18 — Custom 404 page | Kecil | Rendah | ✅ Selesai — noindex, skip-link, CTA katalog & WA ada. *Bug baru ketemu & dibenerin:* path logo/favicon salah nunjuk ke `images/logo.webp` dkk (folder gak ada), seharusnya `images/site/...` — logo & favicon sempat gak muncul di halaman 404 live, sekarang sudah benar |
 | Quick Win | QW19 — Pangkas title/meta description | Sedang | Rendah | ✅ Selesai — semua title ≤60 karakter, semua desc ≤155 karakter (dihitung ulang manual) |
 | High Impact | HI1 — Foto kebun/packing + galeri homepage | Besar | Sedang | ⛔ Ditutup sesuai keputusan Owner — galeri gak dipakai, cukup FB & TikTok. Komentar placeholder kosong sudah dibersihkan |
 | High Impact | HI2 — Optimasi gambar (WebP) | Tinggi | Sedang | ✅ Selesai — 31 file WebP (kualitas adaptif 65-80, rata-rata ~30% lebih kecil dari JPG asli, semua diverifikasi lebih kecil dari original), logo di-resize 400×400→160×160, semua `<img>` relevan jadi `<picture>` dengan fallback |
-| High Impact | HI3 — Halaman Tentang Kami | Sedang-Tinggi | Sedang | Belum dikerjakan |
+| High Impact | HI3 — Halaman Tentang Kami | Sedang-Tinggi | Sedang | ✅ Selesai — dibuat dari data yang sudah tersedia (lokasi, sistem kode label, rating, cara kerja), tanpa nunggu cerita/foto terpisah dari Owner. Dibuat `tentang-kami.html`, ditautkan dari nav di semua halaman (homepage + 4 artikel) + sitemap |
 | High Impact | HI4 — Halaman Area Pengiriman | Sedang | Rendah-Sedang | Belum dikerjakan |
 | High Impact | HI5 — Artikel edukasi tambahan + riset keyword | Sedang | Sedang | Belum dikerjakan |
-| High Impact | HI6 — Lead-capture traffic dingin | Sedang | Sedang | Belum dikerjakan |
-| High Impact | HI7 — Testimoni bernama + foto asli | Sedang-Tinggi | Sedang | ✅ Selesai (bagian nama) — 6 testimoni bernama asli, termasuk 1 rating 4★ dibiarkan apa adanya biar natural. *Foto asli per testimoni belum ada* |
+| High Impact | HI6 — Lead-capture traffic dingin | Sedang | Sedang | ⛔ Ditutup sesuai keputusan Developer/Owner — form minta data pribadi dinilai justru bikin calon pembeli lokal curiga/mundur, bertentangan dengan semangat T3 (transaksi berbasis kepercayaan personal via WA, bukan form asing) |
+| High Impact | HI7 — Testimoni bernama + foto asli | Sedang-Tinggi | Sedang | ✅ Selesai — 6 testimoni bernama asli tayang, termasuk 1 rating 4★ dibiarkan apa adanya. *Foto asli per testimoni sengaja tidak ditambahkan ke web* — sudah terwakili di Google Maps/FB/TikTok, dan web ini memang diposisikan cukup jadi ringkasan, bukan duplikat semua bukti sosial
 | High Impact | HI8 — Security headers HSTS+CSP | Kecil-Sedang | Sedang | ✅ Selesai — HSTS + CSP lengkap di vercel.json, dicek gak ada resource yang keblok |
 | Long-term | LT1 — Bundling produk musiman | Sedang | Sedang | Belum dikerjakan |
 | Long-term | LT2 — Program retensi & repeat order | Tinggi (jk. panjang) | Rendah-Sedang | Belum dikerjakan |
@@ -332,7 +337,7 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 | Long-term | LT6 — Custom domain | Sedang-Tinggi (jk. panjang) | Sedang | Menunggu QW1 tuntas |
 | Long-term | LT7 — Segmen B2B/penghijauan | Tinggi (jk. panjang) | Sedang-Tinggi | Belum dikerjakan |
 | Long-term | LT8 — Foto skala/angle tambahan per produk | Sedang | Sedang | Belum dikerjakan |
-| Long-term | LT9 — Polish UI minor | Kecil | Rendah | Belum dikerjakan |
+| Long-term | LT9 — Polish UI minor | Kecil | Rendah | ✅ Selesai — tap target hamburger menu & tombol back-to-top dinaikkan ke 44×44px, navbar shrink halus saat discroll (`header.scrolled`) |
 
 ---
 

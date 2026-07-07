@@ -55,13 +55,20 @@
   }
   pilihBoxes.forEach(cb => cb.addEventListener('change', updateMultiBar));
 
-  // Tombol kembali ke atas
+  // Tombol kembali ke atas + navbar shrink saat discroll
   const backToTop = document.getElementById('backToTop');
-  if(backToTop){
-    window.addEventListener('scroll', ()=>{
+  const siteHeader = document.querySelector('header');
+  window.addEventListener('scroll', ()=>{
+    if(backToTop){
       if(window.scrollY > 600){ backToTop.classList.add('show'); }
       else{ backToTop.classList.remove('show'); }
-    });
+    }
+    if(siteHeader){
+      if(window.scrollY > 40){ siteHeader.classList.add('scrolled'); }
+      else{ siteHeader.classList.remove('scrolled'); }
+    }
+  });
+  if(backToTop){
     backToTop.addEventListener('click', ()=>{
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });

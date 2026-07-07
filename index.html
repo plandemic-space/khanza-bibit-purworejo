@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="Bibit tanaman kayu, buah-buahan, hias, dan rempah-rempah berkualitas dari Purworejo. Dicek sebelum dikirim ke seluruh Indonesia.">
 <meta name="twitter:image" content="https://khanzabibit.vercel.app/images/banner.jpg">
 <link rel="canonical" href="https://khanzabibit.vercel.app/">
+<link rel="preload" as="image" href="images/pucuk-merah-baris.jpg" fetchpriority="high">
 <meta name="theme-color" content="#33503A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +66,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="images/pucuk-merah-baris.jpg" alt="Barisan bibit Pucuk Merah di kebun Khanza Bibit, Purworejo" width="1600" height="900">
+      <img src="images/pucuk-merah-baris.jpg" alt="Barisan bibit Pucuk Merah di kebun Khanza Bibit, Purworejo" width="1600" height="900" fetchpriority="high">
       <span class="hero-tag">Kebun Bibit Khanza</span>
     </div>
   </section>
@@ -129,7 +130,6 @@
           <div class="produk-img">
             <span class="produk-hole"></span>
             <img loading="lazy" src="images/alpukat-sab034.jpg" alt="Bibit alpukat SAB 034" width="756" height="1008">
-            <span class="stok-badge">Stok Terbatas</span>
           </div>
           <div class="produk-info">
             <div class="produk-kode">Kode SAB&nbsp;034</div>
@@ -190,12 +190,11 @@
           <div class="produk-img">
             <span class="produk-hole"></span>
             <img loading="lazy" src="images/kakao.jpg" alt="Bibit kakao" width="700" height="1244">
-            <span class="stok-badge">Stok Terbatas</span>
           </div>
           <div class="produk-info">
             <div class="produk-kode">Bibit Buah</div>
             <h3>Kakao</h3>
-            <p class="produk-desc">Bibit kakao pilihan, stok terbatas mengikuti musim panen.</p>
+            <p class="produk-desc">Bibit kakao pilihan, cocok untuk kebun maupun lahan campuran.</p>
             <label class="produk-pilih"><input type="checkbox" class="pilih-produk" data-nama="Kakao"><span>Tanya bareng</span></label>
             <a class="produk-cta" href="https://wa.me/6282224415565?text=Halo%2C%20saya%20tertarik%20dengan%20Bibit%20Kakao%2C%20boleh%20info%20harga%20%26%20stoknya%3F" target="_blank" rel="noopener">Tanya via WA →</a>
           </div>
@@ -558,18 +557,33 @@
       <div class="testi-grid">
         <div class="testi">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="quote">"Bibitnya sampai dalam kondisi segar meski dikirim luar kota. Daunnya masih utuh semua."</p>
-          <div class="who">— Pelanggan Google Maps</div>
+          <p class="quote">"Recommended buat yang lagi cari bibit buah di Purworejo. Pilihannya lumayan lengkap."</p>
+          <div class="who">— Yukka Putrimelati, Google Maps</div>
         </div>
         <div class="testi">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="quote">"Admin ramah, dibantu terus soal cara rawat sampai bibit tumbuh baik."</p>
-          <div class="who">— Pelanggan WhatsApp</div>
+          <p class="quote">"Sengaja dari Purworejo kota ke Kemiri gara-gara dibilang bibit durennya bagus. Alhamdulillah nggak zonk."</p>
+          <div class="who">— Puput Nuraeni, Google Maps</div>
         </div>
         <div class="testi">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="quote">"Labelnya jelas, jadi yakin beli bibit yang sesuai pesanan, tidak tertukar."</p>
-          <div class="who">— Pelanggan Purworejo</div>
+          <p class="quote">"Insya Allah kalau butuh bibit lagi, balik ke sini lagi. Masih pengen nambah alpukat soalnya."</p>
+          <div class="who">— Siti Mutawasitoh, Google Maps</div>
+        </div>
+        <div class="testi">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="quote">"Awalnya cuma nyari pucuk merah buat pagar, eh pulangnya malah bawa alpukat sama duren juga."</p>
+          <div class="who">— Sherli Lestari, Google Maps</div>
+        </div>
+        <div class="testi">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="quote">"Jangan keburu muter balik — tinggal lurus aja, nanti ketemu Khanza Bibit di ujung utara. Pas sampai langsung kalap lihat bibitnya."</p>
+          <div class="who">— Dewi Lestarii, Google Maps</div>
+        </div>
+        <div class="testi">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <p class="quote">"Nyari bibit alpukat di Purworejo, untung nemu Khanza Bibit. Pilihannya banyak, akhirnya ambil Aligator."</p>
+          <div class="who">— Susana Wadimah, Google Maps</div>
         </div>
       </div>
     </div>
@@ -618,7 +632,7 @@
     </details>
     <details class="faq-item">
       <summary>Bagaimana kalau bibit rusak saat pengiriman?</summary>
-      <p>Kami pastikan bibit dalam kondisi terbaik dan dikemas dengan aman sebelum berangkat. Kondisi selama perjalanan tergantung layanan ekspedisi — kalau ada kendala setelah bibit sampai, silakan hubungi admin kami untuk didiskusikan solusinya.</p>
+      <p>Kami pastikan bibit dalam kondisi terbaik dan dikemas dengan aman sebelum berangkat. Untuk pengiriman via jasa ekspedisi, kondisi selama perjalanan berada di luar kendali kami — namun tetap hubungi admin jika ada kendala, akan kami bantu carikan solusi terbaik. Untuk pengiriman yang kami antar sendiri, kondisi bibit sampai tujuan menjadi tanggung jawab kami.</p>
     </details>
     <details class="faq-item">
       <summary>Apakah bisa kirim ke luar Jawa?</summary>

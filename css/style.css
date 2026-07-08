@@ -12,6 +12,7 @@
     --moss:#75825033;
     --moss-solid:#727F4E;
     --paprika:#AE4B29;
+    --paprika-text:#8F3D1F;
     --line:#D9CCA2;
     --paper-rgb:245,239,222;
   }
@@ -101,6 +102,8 @@
   .nav-links a{ text-decoration:none; color:var(--ink); position:relative; padding-bottom:2px; }
   .nav-links a::after{ content:""; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--paprika); transition:right .2s ease; }
   .nav-links a:hover::after{ right:0; }
+  .nav-cta{ display:none; }
+  @media(min-width:960px){ .nav-cta{ display:inline-flex; } }
   .menu-toggle{ display:none; align-items:center; justify-content:center; width:44px; height:44px; padding:0; background:none; border:none; font-size:22px; cursor:pointer; color:var(--pine-deep); }
   @media(max-width:900px){
     .nav-links{ display:none; }
@@ -195,6 +198,8 @@
 
   /* ---------- Katalog ---------- */
   .katalog-bg{ background:var(--paper-dark); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .katalog-bg .eyebrow{ color:var(--paprika-text); }
+  .katalog-bg .eyebrow::before{ background:var(--paprika-text); }
   .filters{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
   .filter-btn{
     font-family:'IBM Plex Mono', monospace;
@@ -435,6 +440,8 @@
   .artikel-faq{ border-top:1px dashed var(--line); padding-top:18px; margin-top:30px; }
   .artikel-faq .q{ font-family:'Fraunces', serif; font-weight:600; color:var(--pine-deep); margin-bottom:4px; }
   .artikel-lainnya{ background:var(--paper-dark); border-top:1px solid var(--line); padding:50px 0; }
+  .artikel-lainnya .eyebrow{ color:var(--paprika-text); }
+  .artikel-lainnya .eyebrow::before{ background:var(--paprika-text); }
   .artikel-lainnya .grid{ display:grid; grid-template-columns:1fr; gap:16px; }
   @media(min-width:700px){ .artikel-lainnya .grid{ grid-template-columns:repeat(3,1fr); } }
   @media(min-width:980px){ .artikel-lainnya .grid{ grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); } }

@@ -27,13 +27,7 @@
     });
   });
 
-  // Show nav CTA button only on wider screens
-  function updateNavCta(){
-    const navCta = document.getElementById('navCta');
-    if(navCta){ navCta.style.display = window.innerWidth >= 960 ? 'inline-flex' : 'none'; }
-  }
-  updateNavCta();
-  window.addEventListener('resize', updateNavCta);
+  // Nav CTA visibility sekarang di-handle CSS media query (.nav-cta), tidak perlu JS
 
   // Pilih beberapa produk sekaligus -> 1 pesan WA gabungan
   const pilihBoxes = document.querySelectorAll('.pilih-produk');

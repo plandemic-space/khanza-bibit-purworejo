@@ -1,4 +1,7 @@
-// Filter katalog
+// Vercel Web Analytics queue polyfill
+  window.va = window.va || function(){ (window.vaq = window.vaq || []).push(arguments); };
+
+  // Filter katalog
   const buttons = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.produk');
   buttons.forEach(btn=>{

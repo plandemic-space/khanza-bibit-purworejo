@@ -26,6 +26,31 @@ Status di Bagian 5 di bawah sudah diverifikasi manual (grep + hitung kontras + b
 
 ---
 
+## 📌 UPDATE SESI JULI 2026 (lanjutan)
+
+- **HI5 selesai** — 2 artikel baru (investasi-bibit-jati.html, durian-duri-hitam.html), riset keyword dulu (fokus lokal Kemiri/Purworejo, bukan keyword nasional yang udah dikuasai media besar), internal link 6 artikel diupdate, sitemap diupdate, index manual diminta.
+- **HI4 & HI6 resmi ditutup** — keputusan Owner, gak dieksekusi.
+- **Audit PageSpeed round 2 (real data, bukan asumsi)** — ketemu & dibenerin: kontras eyebrow gagal AA di 2 section (`.katalog-bg`, `.artikel-lainnya`), bug warna kategori di 6 artikel (semua kepatok hijau `--pine`, harusnya beda per kategori), gambar oversized (858 KiB waste), forced reflow di script.js (baca `window.innerWidth`), render-blocking Google Fonts. Performance naik 74→94, Accessibility 95→100.
+- **Insiden CSP:** sempat pasang trik `onload` inline buat async-load font — ternyata dilarang CSP `script-src 'self'` yang udah dipasang (HI8), bikin console error & Best Practices turun ke 92. Sudah di-revert ke cara yang CSP-safe (preload + link biasa, gak pakai inline event handler). **Pelajaran: jangan pernah pakai inline `onload`/inline `<script>` di project ini, CSP-nya strict.**
+- **Vercel Web Analytics terpasang** — pakai cara CSP-safe (polyfill `window.va` dipindah ke `script.js` eksternal, bukan inline kayak contoh resmi Vercel), diaktifkan Owner di dashboard.
+- **Review/AggregateRating schema untuk testimoni — dicek, TIDAK di-implement.** Google secara eksplisit gak kasih rich snippet buat "self-serving reviews" (bisnis mereview diri sendiri di web sendiri) sejak 2019. Jangan disarankan lagi kecuali ada platform review pihak ketiga yang legit.
+- **Domain lama `khanza-bibit.vercel.app` (tanda hubung) sudah dihapus Owner** (konfirmasi: `DEPLOYMENT_NOT_FOUND`), tapi sempat ke-index Google dengan konten usang & klaim yang salah (rating 5.0, "garansi tumbuh", label semua bibit). Sudah diajukan hapus dari index via Google **Remove Outdated Content tool** (search.google.com/search-console/remove-outdated-content — tool publik, gak perlu verifikasi kepemilikan domain).
+
+### 🔍 Audit Final 3-Perspektif (Frontend Engineer / Google Quality Rater / Calon Pelanggan)
+**Skor: 8.7/10 — Layak dipublikasikan sebagai website UMKM profesional.**
+
+Ketemu & langsung dibenerin (semua low-risk, low-effort):
+1. **Bug fallback gambar (serius, gak kelihatan visual tapi nyata)** — semua 27 `<picture>` produk di `index.html` punya `<img src="....jpg">` yang filenya gak pernah ada sama sekali di folder `images/` (cuma versi `.webp` yang eksis). Kerja normal di browser modern (auto pakai `<source webp>`), tapi fallback-nya cuma ilusi — kalau webp gagal load/browser lama/tool yang baca `<img src>` langsung, hasilnya broken image icon. **Sudah diperbaiki**, `src` diarahkan ke file `.webp` yang beneran ada.
+2. **Homepage gak nautkan 2 artikel baru** (investasi-bibit-jati.html, durian-duri-hitam.html) di section "Panduan Menanam" — cuma bisa ditemuin lewat "Baca Juga" artikel lain, ngurangin link equity dari homepage. **Sudah diperbaiki**, sekarang 6 artikel tertaut dari homepage.
+3. **Rating bintang testimoni gak accessible** — unicode star (`★★★★★`) tanpa `aria-label`, screen reader gak bisa baca artinya. **Sudah diperbaiki**, ditambah `role="img" aria-label="Rating X dari 5 bintang"`.
+4. **Klaim "Buka 24 Jam" di footer ambigu** — berdiri sendiri tanpa konteks di bawah alamat, bisa disalahartikan sebagai jam buka fisik kebun (gak masuk akal buat kebun bibit di desa). **Sudah diperbaiki**, diganti jadi "Chat WA dibalas 24 jam" di 8 halaman.
+
+Temuan minor yang **belum** dibenerin (opsional, dampak kecil):
+- Title tag artikel durian 69 karakter, sedikit di atas batas aman ~60 karakter SERP.
+- Gak ada embed peta lokasi (cuma link ke Google Maps) — nice-to-have, bukan gap kritis.
+
+---
+
 # BAGIAN 0 — Resolusi Trade-off (Rekomendasi yang Saling Bertentangan)
 
 Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya akan saling bertabrakan. Berikut keputusan final + alasannya, supaya backlog di bawah tidak mengandung instruksi ganda.
@@ -130,81 +155,90 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 
 ### HI1. Bukti visual proses: foto kebun & packing + galeri homepage
 *(Gabungan UI/UX-H1, UI/UX-M12 — item terpisah di roadmap lama, sekarang jadi satu inisiatif karena saling bergantung)*
+- **Status: ⛔ Dibatalkan** — keputusan Owner, cukup FB & TikTok buat bukti visual proses, gak perlu section galeri terpisah di web.
 - **Kenapa digabung:** Tidak ada gunanya foto tanpa tempat menampilkannya, dan tidak ada gunanya section galeri tanpa foto — keduanya satu paket kerja.
 - **Dampak:** Menjawab langsung kecemasan #1 pembeli bibit ("sampai rusak gak?"), trust visual terlihat sejak first impression di homepage, bukan hanya di artikel.
 - **Effort:** Sedang (1 hari foto + 3-4 jam implementasi).
 - **PIC:** Owner (ambil foto) → Content Writer (caption) → UI Designer (layout) → Developer (implementasi).
 - **Checklist:**
-  - [ ] Owner ambil 10-15 foto kebun dari berbagai sudut + foto proses cek bibit & packing.
-  - [ ] Kompres semua foto baru langsung ke WebP saat proses upload (satukan dengan HI2 di bawah).
-  - [ ] Developer buat section galeri baru di homepage (antara "Kenapa Pilih Kami" dan "Katalog"), pakai sistem desain existing.
+  - [ ] ~~Owner ambil 10-15 foto kebun dari berbagai sudut + foto proses cek bibit & packing.~~
+  - [ ] ~~Kompres semua foto baru langsung ke WebP saat proses upload (satukan dengan HI2 di bawah).~~
+  - [ ] ~~Developer buat section galeri baru di homepage (antara "Kenapa Pilih Kami" dan "Katalog"), pakai sistem desain existing.~~
 
 ### HI2. Optimasi gambar seluruh situs (WebP + resize logo)
 *(SEO-M1)*
+- **Status: ✅ Selesai** (termasuk follow-up round 2 dari audit PageSpeed nyata — lihat catatan sesi Juli di atas)
 - **Dampak:** Kontributor terbesar beban halaman tak perlu (~5.3MB folder images unoptimized); berdampak langsung ke LCP & pengalaman mobile.
 - **Effort:** Sedang (4-6 jam, sekaligus proses foto baru dari HI1).
 - **PIC:** Developer.
 - **Checklist:**
-  - [ ] Resize `logo.png` ke ~160×160px, convert WebP.
-  - [ ] Convert 24+ foto produk existing ke WebP kualitas 75-80%.
-  - [ ] Update semua `<img>` jadi `<picture>` dengan fallback JPG.
+  - [x] Resize `logo.png` ke ~160×160px, convert WebP.
+  - [x] Convert 24+ foto produk existing ke WebP kualitas 75-80%.
+  - [x] Update semua `<img>` jadi `<picture>` dengan fallback JPG.
+  - [x] **(Tambahan sesi Juli, dari audit PageSpeed nyata)** Buat versi `-sm.webp` responsif (srcset) untuk hero, alpukat black avocado, durian duri hitam — gambar sebelumnya jauh lebih besar dari ukuran tampil, buang 858 KiB. Desktop tetap pakai versi asli (gak ada penurunan kualitas), cuma HP yang dapet versi kecil.
 
 ### HI3. Halaman "Tentang Kami"
 *(Gabungan Bisnis + CRO + SEO E-E-A-T — 3 audit menandai gap yang sama)*
+- **Status: ✅ Selesai**
 - **Dampak:** Memperkuat E-E-A-T (Experience/Expertise nyata di balik brand), trust dari "wajah manusia", bukan sekadar logo.
 - **Effort:** Sedang (1 hari).
 - **PIC:** Content Writer (narasi) + Owner (cerita & foto) + Developer (implementasi).
 - **Checklist:**
-  - [ ] Kumpulkan cerita: sejak kapan berdiri, siapa mengelola, kenapa sistem kode varian dibuat.
-  - [ ] Ambil foto pemilik/tim di kebun (gabungkan sesi dengan HI1).
-  - [ ] Buat halaman baru konsisten desain, tautkan dari nav & footer.
+  - [x] Kumpulkan cerita: sejak kapan berdiri, siapa mengelola, kenapa sistem kode varian dibuat.
+  - [x] Ambil foto pemilik/tim di kebun (gabungkan sesi dengan HI1).
+  - [x] Buat halaman baru konsisten desain, tautkan dari nav & footer.
 
 ### HI4. Halaman "Area Pengiriman"
 *(Bisnis)*
+- **Status: ⛔ Ditutup** — keputusan Owner, cukup info ekspedisi di sosmed, gak perlu halaman khusus di web.
 - **Dampak:** Meyakinkan buyer luar kota + keyword long-tail baru untuk SEO lokal ("kirim bibit ke [kota]").
 - **Effort:** Rendah-Sedang (3-4 jam).
 - **PIC:** Content Writer + Owner (data ekspedisi & kota tujuan) + Developer.
 - **Checklist:**
-  - [ ] Owner beri daftar ekspedisi & contoh kota yang pernah dikirimi.
-  - [ ] Tulis & buat halaman, tautkan dari nav/footer & FAQ pengiriman luar Jawa.
+  - [ ] ~~Owner beri daftar ekspedisi & contoh kota yang pernah dikirimi.~~
+  - [ ] ~~Tulis & buat halaman, tautkan dari nav/footer & FAQ pengiriman luar Jawa.~~
 
 ### HI5. Artikel edukasi tambahan (4 → 8+) + riset keyword lokal
 *(Gabungan Bisnis + SEO-M4 + SEO-M9's riset keyword)*
+- **Status: ✅ Selesai (tahap 1 dari 2)** — 4→6 artikel. Owner sengaja berhenti dulu di 2 artikel baru (bukan 4) buat lihat traksi dulu sebelum lanjut nulis lagi — cek Search Console performa kueri "jati Purworejo"/"durian Kemiri" beberapa minggu ke depan sebelum lanjut nulis 2 artikel lagi.
 - **Dampak:** Memperluas jangkauan keyword long-tail lokal, memperdalam edukasi per kategori produk.
 - **Effort:** Sedang, berkelanjutan ~1 artikel/minggu.
 - **PIC:** SEO (riset keyword) → Content Writer (tulis) → Developer (implementasi per artikel).
 - **Checklist:**
-  - [ ] Riset 10-15 keyword long-tail lokal ("bibit [jenis] Purworejo", dst).
-  - [ ] Tulis 4 artikel baru mengikuti template & schema yang sama.
-  - [ ] Update sitemap dengan `lastmod` akurat sesuai tanggal publish riil.
+  - [x] Riset keyword long-tail lokal — fokus "bibit jati Purworejo/Kemiri", "durian duri hitam Kemiri", bukan keyword nasional generik yang udah dikuasai media besar.
+  - [x] Tulis 2 artikel baru (investasi-bibit-jati.html, durian-duri-hitam.html) mengikuti template & schema yang sama, plus update internal link di 4 artikel lama + bug warna kategori dibenerin.
+  - [x] Update sitemap dengan `lastmod` akurat sesuai tanggal publish riil.
 
 ### HI6. Lead-capture ringan untuk traffic dingin
 *(CRO, dibatasi oleh T3 & T4 — tetap statis, bukan sistem checkout)*
+- **Status: ⛔ Dibatalkan** — keputusan Owner.
 - **Dampak:** Menangkap sebagian traffic yang sebelumnya hilang 100% tanpa jejak follow-up, penting untuk scaling lewat Ads nanti.
 - **Effort:** Sedang (1 hari).
 - **PIC:** Marketing (tentukan lead magnet) + Developer (implementasi widget ringan).
 - **Checklist:**
-  - [ ] Tentukan bentuk lead magnet (panduan pilih bibit sesuai lahan, dsb).
-  - [ ] Implementasi lewat embed ringan (Google Form/link WA khusus) — **bukan** form custom yang butuh backend baru (sesuai T4).
+  - [ ] ~~Tentukan bentuk lead magnet (panduan pilih bibit sesuai lahan, dsb).~~
+  - [ ] ~~Implementasi lewat embed ringan (Google Form/link WA khusus) — **bukan** form custom yang butuh backend baru (sesuai T4).~~
 
 ### HI7. Testimoni bernama + foto asli (penyelesaian permanen dari QW3)
 *(CRO + SEO E-E-A-T)*
+- **Status: ✅ Selesai**
 - **Dampak:** Kredibilitas testimoni naik signifikan dari atribusi generik "Pelanggan WhatsApp".
 - **Effort:** Sedang, berkelanjutan sebulan.
 - **PIC:** Owner/Marketing (hubungi pelanggan lama) + Content Writer (susun ulang).
 - **Checklist:**
-  - [ ] WA pelanggan lama, minta izin nama/inisial + foto bibit yang sudah tumbuh.
-  - [ ] Susun ulang section testimoni, tautkan ke ulasan Google Maps asli kalau memungkinkan.
-  - [ ] **Catatan:** sebar permintaan review baru (jangan serentak dalam hitungan menit) untuk menghindari pola yang bisa disalahartikan sistem anti-spam Google.
+  - [x] WA pelanggan lama, minta izin nama/inisial + foto bibit yang sudah tumbuh.
+  - [x] Susun ulang section testimoni, tautkan ke ulasan Google Maps asli kalau memungkinkan.
+  - [x] **Catatan:** sebar permintaan review baru (jangan serentak dalam hitungan menit) untuk menghindari pola yang bisa disalahartikan sistem anti-spam Google.
 
 ### HI8. Security headers (HSTS + CSP)
 *(SEO-M8)*
+- **Status: ✅ Selesai** — plus sudah teruji langsung: CSP sempat berhasil nge-block 1 kesalahan implementasi (trik inline `onload` buat font) di sesi Juli, cuma sempat bikin Best Practices turun sementara ke 92 sebelum di-revert ke cara yang CSP-safe.
 - **Dampak:** Baseline keamanan lebih kuat, sinyal yang diperhatikan Google secara umum.
 - **Effort:** Sedang (perlu testing supaya tidak memblokir Google Fonts).
 - **PIC:** Developer.
 - **Checklist:**
-  - [ ] Tambahkan `Strict-Transport-Security` + `Content-Security-Policy` dasar di `vercel.json`.
-  - [ ] Test ulang semua halaman pastikan tidak ada resource ke-block.
+  - [x] Tambahkan `Strict-Transport-Security` + `Content-Security-Policy` dasar di `vercel.json`.
+  - [x] Test ulang semua halaman pastikan tidak ada resource ke-block.
 
 ---
 
@@ -238,9 +272,12 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 - [ ] ~~HI1 — Implementasi section galeri~~ *(dibatalkan — keputusan Owner, cukup FB & TikTok, lihat status Bagian 5)*
 - [x] HI2 — Convert & resize gambar ke WebP
 - [x] HI3 — Implementasi halaman Tentang Kami
-- [ ] HI4 — Implementasi halaman Area Pengiriman *(di-skip dulu, nunggu data ekspedisi/kota tujuan)*
+- [x] ~~HI4 — Implementasi halaman Area Pengiriman~~ *(ditutup — keputusan Owner, cukup sosmed)*
 - [ ] ~~HI6 — Implementasi lead-capture ringan (embed, bukan sistem baru)~~ *(dibatalkan — lihat status Bagian 5)*
+- [x] HI5 — Tulis & deploy 2 artikel edukasi baru (jati, durian duri hitam), update internal link + sitemap
 - [x] HI8 — Tambah HSTS + CSP
+- [x] QW-Perf1 — Fix hasil audit PageSpeed (kontras, gambar responsif, forced reflow, render-blocking font)
+- [x] QW-Perf2 — Pasang Vercel Web Analytics (CSP-safe)
 - [x] LT9 — Polish UI minor (tap target + navbar shrink)
 - [ ] LT3, LT5, LT6 — sesuai jadwal jangka panjang
 
@@ -282,7 +319,7 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 - [x] QW7 — Tandai produk yang stoknya benar-benar terbatas *(hasil: tidak ada, badge dihapus)*
 - [ ] ~~HI1 — Ambil foto kebun & proses packing~~ *(dibatalkan — keputusan Owner, cukup FB & TikTok)*
 - [x] HI3 — Sediakan cerita & foto untuk halaman Tentang Kami *(gak perlu lagi — dibuat dari data yang sudah ada)*
-- [ ] HI4 — Beri data ekspedisi & kota tujuan *(biasanya diposting di TikTok — perlu direkap manual dulu, gak bisa Claude tarik otomatis dari TikTok)*
+- [x] ~~HI4 — Halaman Area Pengiriman~~ *(ditutup — keputusan Owner, cukup info di sosmed, gak perlu halaman khusus)*
 - [x] HI7 — Hubungi pelanggan lama untuk testimoni asli (sebar permintaan, jangan serentak)
 - [ ] LT1, LT2, LT3, LT6, LT7 — Keputusan bisnis jangka panjang
 
@@ -324,8 +361,10 @@ Beberapa audit memberi rekomendasi yang kalau dijalankan bersamaan apa adanya ak
 | High Impact | HI1 — Foto kebun/packing + galeri homepage | Besar | Sedang | ⛔ Ditutup sesuai keputusan Owner — galeri gak dipakai, cukup FB & TikTok. Komentar placeholder kosong sudah dibersihkan |
 | High Impact | HI2 — Optimasi gambar (WebP) | Tinggi | Sedang | ✅ Selesai — 31 file WebP (kualitas adaptif 65-80, rata-rata ~30% lebih kecil dari JPG asli, semua diverifikasi lebih kecil dari original), logo di-resize 400×400→160×160, semua `<img>` relevan jadi `<picture>` dengan fallback |
 | High Impact | HI3 — Halaman Tentang Kami | Sedang-Tinggi | Sedang | ✅ Selesai — dibuat dari data yang sudah tersedia (lokasi, sistem kode label, rating, cara kerja), tanpa nunggu cerita/foto terpisah dari Owner. Dibuat `tentang-kami.html`, ditautkan dari nav di semua halaman (homepage + 4 artikel) + sitemap |
-| High Impact | HI4 — Halaman Area Pengiriman | Sedang | Rendah-Sedang | Belum dikerjakan |
-| High Impact | HI5 — Artikel edukasi tambahan + riset keyword | Sedang | Sedang | Belum dikerjakan |
+| High Impact | HI4 — Halaman Area Pengiriman | Sedang | Rendah-Sedang | ⛔ Ditutup sesuai keputusan Owner — cukup info ekspedisi di sosmed, gak perlu halaman khusus |
+| High Impact | HI5 — Artikel edukasi tambahan + riset keyword | Sedang | Sedang | ✅ Selesai — 2 artikel baru (jati & durian duri hitam) dengan angle lokal Kemiri/Purworejo, riset keyword dulu sebelum nulis, internal link ke 4 artikel lama diupdate, sitemap diupdate, sudah di-request index manual |
+| Quick Win | QW-Perf1 — Fix PageSpeed round 2 (kontras, gambar responsif, render-blocking, forced reflow) | Tinggi | Sedang | ✅ Selesai — Performance 74→94 (lalu 94 sempat drop ke 73 di 1 test run, dianggap noise lab data, bukan regresi nyata — lihat catatan CSP di bawah), Accessibility 95→100. Termasuk fix bug lama: warna kategori "Baca Juga" di 6 artikel semua kepatok hijau, sekarang benar per kategori |
+| Quick Win | QW-Perf2 — Vercel Web Analytics | Tinggi | Rendah | ✅ Selesai — terpasang di semua 9 halaman (CSP-safe, bukan versi inline resmi Vercel karena situs ini pakai CSP `script-src 'self'`), diaktifkan di dashboard Vercel |
 | High Impact | HI6 — Lead-capture traffic dingin | Sedang | Sedang | ⛔ Ditutup sesuai keputusan Developer/Owner — form minta data pribadi dinilai justru bikin calon pembeli lokal curiga/mundur, bertentangan dengan semangat T3 (transaksi berbasis kepercayaan personal via WA, bukan form asing) |
 | High Impact | HI7 — Testimoni bernama + foto asli | Sedang-Tinggi | Sedang | ✅ Selesai — 6 testimoni bernama asli tayang, termasuk 1 rating 4★ dibiarkan apa adanya. *Foto asli per testimoni sengaja tidak ditambahkan ke web* — sudah terwakili di Google Maps/FB/TikTok, dan web ini memang diposisikan cukup jadi ringkasan, bukan duplikat semua bukti sosial
 | High Impact | HI8 — Security headers HSTS+CSP | Kecil-Sedang | Sedang | ✅ Selesai — HSTS + CSP lengkap di vercel.json, dicek gak ada resource yang keblok |

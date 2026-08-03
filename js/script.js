@@ -70,3 +70,53 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ====== Footer bersama (di-generate sekali di sini, dipakai di semua halaman) ======
+  // Supaya footer cukup diedit di 1 tempat (bukan copy-paste di tiap file HTML),
+  // taruh <div id="footer-slot" data-base="..."></div> di posisi footer tiap halaman.
+  // data-base: "" untuk halaman di folder root, "../" untuk halaman di dalam folder artikel/.
+  // data-jam-text (opsional): override baris jam operasional, default "Chat WA dibalas 24 jam".
+  (function renderFooter(){
+    const slot = document.getElementById('footer-slot');
+    if(!slot) return;
+    const base = slot.dataset.base || '';
+    const jamText = slot.dataset.jamText || 'Chat WA dibalas 24 jam';
+
+    slot.outerHTML = `
+<footer id="kontak">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <picture><source srcset="${base}images/site/logo.webp" type="image/webp"><img loading="lazy" src="${base}images/site/logo.png" alt="Logo Khanza Bibit" width="160" height="160"></picture>
+          <span>Khanza Bibit</span>
+        </div>
+        <p style="max-width:320px;">Menyediakan bibit tanaman kayu, buah-buahan, hias, dan rempah-rempah berkualitas. Berbasis di Purworejo, siap kirim ke seluruh Indonesia.</p>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <p>
+          <a href="https://wa.me/6282224415565" target="_blank" rel="noopener">WhatsApp: 0822-2441-5565</a><br>
+          <a href="https://www.tiktok.com/@teguh.wibowo561" target="_blank" rel="noopener">TikTok: @teguh.wibowo561</a><br>
+          <a href="https://www.facebook.com/teguh.wibowo.597812" target="_blank" rel="noopener">Facebook: Teguh Wibowo</a><br>
+          <a href="https://www.facebook.com/dya.mardhiana90" target="_blank" rel="noopener">Facebook: Dya Mardhiana</a><br>
+          <a href="https://maps.app.goo.gl/UqwznX7Ne4UvaN2a9" target="_blank" rel="noopener">Lihat lokasi di Google Maps →</a>
+        </p>
+      </div>
+      <div>
+        <h3>Kirim Dari</h3>
+        <p>
+          Ngemplak RT 02 / RW 02, Desa Samping,<br>
+          Kec. Kemiri, Kabupaten Purworejo,<br>
+          Jawa Tengah 54262<br><br>
+          ${jamText}
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Khanza Bibit</span>
+      <span class="foot-credit">Crafted by <a href="https://plandemicspace.vercel.app/" target="_blank" rel="noopener noreferrer">Plandemic Space</a></span>
+    </div>
+  </div>
+</footer>`;
+  })();
